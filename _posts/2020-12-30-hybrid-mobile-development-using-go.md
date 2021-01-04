@@ -68,8 +68,9 @@ Go is compelling in many ways for cross platform (mobile) development, and some 
 * "Nobody knows it" (learning together is fun)
 * Easy to learn (not too many complex concepts to wrap our heads around)
 * Common ground (the simplicity makes Go feel neutral)
+* Easy to get help by community or from docs
 
 Now I realize this post is pretty opinionated and optimistic about the outcome. Unfortunately, I don´t have access to the other parallell universes where the we went for all the other stacks, but I´m pretty sure they are all writing an equivalent "success story" as seen from their perspective. 
 
-For mobile development, having two code bases may alerady be challenging enough, so why go for three? -Why not just use Flutter or Xamarin? Well, you´re all right, great tools, and making taking these kind of decisions are hard and should be aligned with the project and product´s requirements, team profile, other tech stacks, etc. 
+For mobile development, having two code bases may alerady be challenging enough, so why go for three? -Why not just use Flutter or Xamarin? Well, you´re all right, great tools, and taking these kind of decisions are hard and should be aligned with the project and product´s requirements, team profile, other tech stacks, etc. 
 
