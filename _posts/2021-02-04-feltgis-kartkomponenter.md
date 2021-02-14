@@ -17,7 +17,8 @@ Et tenkt eksempel som illustrerer hvordan vi bruker dette systemet:
 * Sammen med kunden definerer vi en datamodell. I et enkelt tilfelle, feks "observert art". Denne datatypen har en rekke felter for å beskrive observasjonen, samt illustrasjoner for hvordan artene skal fremstå i kartet som punkt. 
 * Systemet har støtte for roller og tilgangskontroll. For eksempel, kan feltarbeider kun se egne objekter, eller kanskje også laget sine registreringer, og. Brukere i ledergruppen vil kunne se samtlige registreringer med sin innloggede bruker. 
 * Når feltarbeider logger inn i appen første gang, vil alle tilgjengelige observerte artsobjekter synkroniseres og være tilgjengelig i sin helhet i appen.
-* Så snart feltarbeidet gjør en endring i et objekt, vil det synkroniseres med skytjenester, og evt andre brukere som har tilgang til objektet. Dersom det ikke er dekning, vil objektet sendes inn ved anledning (så snart enheten har dekning igjen). 
+* Så snart feltarbeider gjør en endring i et objekt, vil det synkroniseres med skytjenester, og evt andre brukere som har tilgang til objektet. Dersom det ikke er dekning, vil objektet sendes inn ved anledning (så snart enheten har dekning igjen). Appen kan godt vise status for når sist synkronisering har blitt gjort mot server, men forholder seg ellers ikke til at enhet ikke har dekning. Appen har også mulighet til å sende inn data i bakgrunnen, dvs når bruker ikke har appen oppe. 
+* Varslinger: Dersom kunde ønsker å legge inn triggere for varsling, har vi mulighet til det. For eksempel, dersom en kollega gjør registreringer av en bestemt art i nærheten av der bruker befinner seg, kan vi sende ut pushvarsel om dette. 
 
 Den største motivasjonen for at vi begynte å utvikle dette på egen hånd, var manglende fleksibilitet i andre løsninger. Vi ønsker å ha mulighet til å kunne gjøre endringer i datamodellen, uten å måtte gjøre full synk av datasettet. Vi ønsker også å være fri for evt bindinger til lisensdrivende komponer, feks ArcGIS server. Vi ønsker også ha full fleksibilitet til kartmotor i klienten, slik at vi kan kjøre andre kartmotorer enn ArcGIS runtime SDKene ved behov. Vår kildekode kjører allerede på Windows, Mac/iOS, Android og Linux. 
 
@@ -34,6 +35,10 @@ Vi har mulighet til å cache opp vectortiles direkte fra klienten. For større o
 RasterTiles har mye av de samme egenskapene som VectorTiles, men i stedet for å lagre fullstendig objektinformasjon inneholder raster kun en grafisk beskrivelse av det geografiske området. Fordelen er, som med VectorTiles, at det er enkelt å ta med seg offline, ulempen er at skaleringen i klienten ikke blir så pen, samt at man ikke har objektinformasjon for identify-operasjoner (trykk på kartobjekt for mer info) - identify krever nettilgang for å sende ny forespørsel til bakenforliggende tjeneste for mer detaljer om objekt. 
 
 I mange tilfeller har man ikke full tilgang til kildedatasettene, men kun en dynamisk karttjeneste (feks WMS). For å enkelt imøtekomme behovet for offline kart av disse tjenestene, har vi derfor en tjeneste som hjelper oss å konvertere slike dynamiske karttjenester over til RasterTiles, slik at klientapplikasjonene våre kan cache disse opp for offline bruk. 
+
+## Diverse
+
+I forbindelse med skjema som definerer datamodellene, har vi også støtte for rapporter. Dvs, man kan enkelt definere en mal for en rapport, som populeres med registrerte data for bestemte objekt. Disse rapportene kan legges ved som vedlegg til objektene, eller distribueres per e-post. Rapportene kan også inneholde kartutsnitt fra akutell geografi.
 
 ## Veien videre
 
