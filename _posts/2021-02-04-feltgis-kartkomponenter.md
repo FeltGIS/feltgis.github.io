@@ -10,7 +10,7 @@ Vi deler inn vår tekniske tilnærming til dette i tre hovedområder:
 
 Features er redigérbare objekter, med eller uten geometri. De har et skjema som beskriver felter og datatyper, og evt om objektet skal kunne representeres med et punkt, linje eller ei flate. Sammen med geometrien ligger også informasjon om styling, dvs hvordan geometrien skal tegnes i kartet. 
 
-FeltGIS har bygget sitt eget system synkronisering av features mellom skytjenester, mobilapper og den grønne boksen vår (kjører på en mini-PC som er koblet til skogsmaskin-PC). Vi har bred erfaring med tilsvarende mekanismer (ESRI, Realm, Firebase), men har sett det fordelaktig å utvikle vår egen. 
+FeltGIS har bygget sitt eget system for synkronisering av features mellom skytjenester, mobilapper og den grønne boksen vår (kjører på en mini-PC som er koblet til skogsmaskin-PC). Vi har bred erfaring med tilsvarende mekanismer (ESRI, Realm, Firebase), men har sett det fordelaktig å utvikle vår egen. 
 
 Et tenkt eksempel som illustrerer hvordan vi bruker dette systemet: 
 
